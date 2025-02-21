@@ -443,6 +443,11 @@
             }
         }
 
+        function closeModal() {
+            modal.classList.remove('active');
+            unlockScroll();
+        }
+
         // Add click event to all gallery images (excluding logo and hero)
         document.querySelectorAll('.scroll-item img').forEach(img => {
             img.addEventListener('click', function(e) {
@@ -454,40 +459,40 @@
             });
         });
 
-        // Close modal when clicking anywhere
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal || e.target === modalImg) {
-                modal.classList.remove('active');
-                unlockScroll();
+        // Close modal when clicking anywhere including the image
+        modal.addEventListener('click', closeModal);
+        modalImg.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent double firing of event
+            closeModal();
+        });
+
+        // Handle touch events
+        modal.addEventListener('touchend', function(e) {
+            if (modal.classList.contains('active')) {
+                e.preventDefault();
+                closeModal();
+            }
+        });
+
+        modalImg.addEventListener('touchend', function(e) {
+            if (modal.classList.contains('active')) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent double firing of event
+                closeModal();
             }
         });
 
         // Prevent scrolling when modal is open
-        modal.addEventListener('wheel', function(e) {
-            if (modal.classList.contains('active')) {
-                e.preventDefault();
-            }
-        });
-
-        // Handle touch events
         modal.addEventListener('touchmove', function(e) {
             if (modal.classList.contains('active')) {
                 e.preventDefault();
             }
         }, { passive: false });
 
-        // Handle touch end only when modal is active
-        modal.addEventListener('touchend', function(e) {
-            if (modal.classList.contains('active')) {
-                e.preventDefault();
-            }
-        });
-
         // Handle escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
-                modal.classList.remove('active');
-                unlockScroll();
+                closeModal();
             }
         });
 
