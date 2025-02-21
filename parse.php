@@ -17,10 +17,21 @@ if (empty($apiKey)) {
 // Define the API endpoint
 $endpoint = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions";
 
-// Open the results file for writing
-$resultsFile = fopen('results.txt', 'w');
+$baseFilename = 'results'; // Base filename without extension
+$extension = '.txt';       // File extension
+$filename = $baseFilename . $extension; // Initial filename
+$i = 0;                    // Counter for incrementing filenames
+
+// Check if the file exists and increment the filename if necessary
+while (file_exists($filename)) {
+    $i++; // Increment counter
+    $filename = $baseFilename . '-' . $i . $extension; // Create new filename
+}
+
+// Open the file for writing
+$resultsFile = fopen($filename, 'w');
 if (!$resultsFile) {
-    die("Failed to create or open 'results.txt'.");
+    die("Failed to create or open '$filename'.");
 }
 
 // Function to call the Qwen-VL API
@@ -47,13 +58,30 @@ function getWoodworkingDescription($imagePath, $apiKey, $endpoint) {
 
     // Define the prompt for woodworking craftsmanship
     $combinedPrompt = <<<PROMPT
-Describe the woodworking craftsmanship in this image. Focus on details like:
-- Joinery techniques (e.g., dovetail, mortise-and-tenon)
-- Materials used (e.g., type of wood, finishes)
-- Design elements (e.g., carvings, patterns)
-- Overall quality and skill level demonstrated
+Type of project visible in photo (choose one):
+Custom cabinetry
+Built-in storage/shelving
+Commercial installation
+Furniture piece
+Workshop/process photo
 
-Format the response as a concise list with bullet points.
+Setting/location:
+Residential
+Commercial space
+Workshop
+Other (specify)
+
+Stage of work:
+In progress
+Completed installation
+Design/planning
+
+Key features visible:
+Materials used
+Style (modern, traditional, industrial, etc.)
+Notable design elements
+
+One-line summary of what this image shows"
 PROMPT;
 
     // Prepare the request payload
@@ -143,7 +171,7 @@ foreach ($images as $image) {
     fwrite($resultsFile, "$filename\n $description\n");
 
     // Add a delay to avoid hitting rate limits
-    sleep(20); // Increase the delay to avoid exceeding rate limits
+    sleep(5); // Increase the delay to avoid exceeding rate limits
 }
 
 // Close the results file
