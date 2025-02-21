@@ -38,23 +38,61 @@ header {
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .logo {
     color: var(--off-white);
-    font-size: 1.8rem;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    color: var(--off-white);
+}
+
+.logo-img #logo_g {
+    fill: var(--off-white);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.company-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     font-weight: 500;
+    line-height: 1.1;
+    color: var(--off-white);
+    white-space: nowrap;
+}
+
+.company-subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--light-wood);
+    line-height: 1;
+    letter-spacing: 0.05em;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -375,7 +413,7 @@ footer {
     transform: scale(1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 825px) {
     .hero {
         height: 70vh;
         min-height: 400px;
@@ -417,6 +455,8 @@ footer {
         flex-direction: column;
         padding: 1rem;
         gap: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
@@ -426,5 +466,25 @@ footer {
     .scroll-item {
         width: 250px;
         height: 250px;
+    }
+
+    .company-name {
+        font-size: 1.2rem;
+    }
+
+    .company-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
     }
 } 
