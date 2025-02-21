@@ -244,28 +244,38 @@ nav {
 }
 
 .section {
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     text-align: center;
+}
+
+.gallery-set {
     margin-bottom: 3rem;
-    color: var(--primary-wood);
-    font-size: 2.8rem;
-    font-weight: 600;
+}
+
+.gallery-set:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-set h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
 }
 
 .scroll-gallery {
     display: flex;
-    overflow-x: auto;
     gap: 1rem;
-    padding: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: 2rem;
-    justify-content: center;
 }
 
 .scroll-gallery::-webkit-scrollbar {
@@ -282,18 +292,15 @@ nav {
     border-radius: 4px;
 }
 
-.scroll-gallery > * {
-    scroll-snap-align: center;
-}
-
 .scroll-item {
     flex: 0 0 auto;
     width: 300px;
     height: 300px;
+    scroll-snap-align: start;
     position: relative;
-    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .scroll-item img {
@@ -305,18 +312,6 @@ nav {
 
 .scroll-item:hover img {
     transform: scale(1.05);
-}
-
-.gallery-set {
-    margin-bottom: 4rem;
-}
-
-.gallery-set h3 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: var(--primary-wood);
-    margin: 1.5rem 0 1rem;
-    padding-left: 1rem;
 }
 
 .gallery-desc {
