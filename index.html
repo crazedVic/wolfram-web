@@ -455,9 +455,11 @@
         });
 
         // Close modal when clicking anywhere
-        modal.addEventListener('click', function() {
-            modal.classList.remove('active');
-            unlockScroll();
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal || e.target === modalImg) {
+                modal.classList.remove('active');
+                unlockScroll();
+            }
         });
 
         // Prevent scrolling when modal is open
