@@ -12,10 +12,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="language-switcher">
-        <button class="lang-btn" data-lang="en">🇨🇦</button>
-        <button class="lang-btn" data-lang="de">🇩🇪</button>
-    </div>
     <header>
         <nav>
             <a href="#" class="logo" aria-label="DH Woodworking Inc. Home">
@@ -33,6 +29,10 @@
                 <li><a href="#craftsmanship" data-i18n="nav.craftsmanship">Craftsmanship</a></li>
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li class="language-switcher">
+                    <button class="lang-btn" data-lang="en">🇨🇦</button>
+                    <button class="lang-btn" data-lang="de">🇩🇪</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -370,7 +370,7 @@
     </section>
 
     <footer>
-        <p data-i18n="footer.copyright">&copy; 2025 DH Woodworking Inc. All rights reserved.</p>
+        <p data-i18n="footer.copyright">&copy; 2025 DH Woodworking Inc. All rights reserved.</p><span class="build-number">Build 1.0234</span>
     </footer>
 
     <!-- Image Modal -->
