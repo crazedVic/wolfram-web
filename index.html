@@ -384,6 +384,7 @@
         let currentSlide = 0;
         let previousSlide = heroSlides.length - 1;
         let isAnimating = false;
+        let sliderInterval;
         const slideInterval = 12000; // Change slide every 12 seconds
 
         function showSlide(index) {
@@ -413,12 +414,7 @@
 
         // Initialize the slider
         showSlide(0);
-        const sliderInterval = setInterval(nextSlide, slideInterval);
-
-        // Cleanup interval on page unload
-        window.addEventListener('unload', () => {
-            clearInterval(sliderInterval);
-        });
+        sliderInterval = setInterval(nextSlide, slideInterval);
 
         // Image Modal functionality
         const modal = document.getElementById('imageModal');
@@ -431,11 +427,13 @@
         }
 
         function unlockScroll() {
-            document.body.style.overflow = originalBodyStyle;
+            if (originalBodyStyle) {
+                document.body.style.overflow = originalBodyStyle;
+            }
         }
 
-        // Add click event to all images except the logo and hero images
-        document.querySelectorAll('img:not(.logo-img):not(.hero-slide img)').forEach(img => {
+        // Add click event to all gallery images (excluding logo and hero)
+        document.querySelectorAll('.scroll-item img').forEach(img => {
             img.addEventListener('click', function(e) {
                 e.preventDefault();
                 modalImg.src = this.src;
@@ -465,9 +463,11 @@
             }
         }, { passive: false });
 
-        // Prevent double-tap zoom on mobile
+        // Handle touch end only when modal is active
         modal.addEventListener('touchend', function(e) {
-            e.preventDefault();
+            if (modal.classList.contains('active')) {
+                e.preventDefault();
+            }
         });
 
         // Handle escape key
@@ -475,6 +475,22 @@
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 modal.classList.remove('active');
                 unlockScroll();
+            }
+        });
+
+        // Cleanup interval on page unload or visibility change
+        window.addEventListener('unload', () => {
+            if (sliderInterval) {
+                clearInterval(sliderInterval);
+            }
+        });
+
+        // Handle page visibility changes
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && sliderInterval) {
+                clearInterval(sliderInterval);
+            } else if (!document.hidden && !sliderInterval) {
+                sliderInterval = setInterval(nextSlide, slideInterval);
             }
         });
     </script>
