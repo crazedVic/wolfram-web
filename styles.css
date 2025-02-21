@@ -718,7 +718,7 @@ footer {
     
     .section {
         padding: 1.5rem 1rem;
-        scroll-margin-top: calc(var(--header-height) + 1.5rem); /* Reduced from 2rem for better balance */
+        scroll-margin-top: calc(var(--header-height) + 1.5rem);
     }
 
     .section-title {
@@ -760,11 +760,11 @@ footer {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Transform scroll gallery to grid */
+    /* Transform scroll gallery to 2-column grid */
     .scroll-gallery {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
         overflow: visible;
         padding: 0;
         scroll-snap-type: none;
