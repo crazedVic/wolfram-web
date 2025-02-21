@@ -4,12 +4,17 @@
     --dark-wood: #3E2723;
     --off-white: #F5F5F5;
     --text-dark: #2C1810;
+    --header-height: 75px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -343,6 +348,7 @@ nav {
     padding: 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 .section-title {
@@ -703,4 +709,111 @@ footer {
     font-style: normal;
     color: var(--primary-wood);
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 65px;
+    }
+    
+    .section {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.875rem;
+    }
+
+    .gallery-set h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        background-color: var(--dark-wood);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .language-switcher {
+        position: static;
+        margin-top: 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Transform scroll gallery to grid */
+    .scroll-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        overflow: visible;
+        padding: 0;
+        scroll-snap-type: none;
+    }
+
+    .scroll-gallery::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scroll-item {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%; /* Makes items square */
+        scroll-snap-align: none;
+    }
+
+    .scroll-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .company-name {
+        font-size: 1.2rem;
+    }
+
+    .company-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .lang-btn {
+        font-size: 1.1rem;
+    }
+
+    header {
+        height: 65px;
+    }
 } 
