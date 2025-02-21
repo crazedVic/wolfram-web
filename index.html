@@ -26,10 +26,64 @@
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>DH Woodworking Inc.</h1>
-            <p>Exceptional craftsmanship and custom woodworking solutions</p>
-            <a href="#contact" class="cta-button">Start Your Project</a>
+        <div class="hero-slider">
+            <!-- Cabinetry -->
+            <div class="hero-slide" style="display: none;">
+                <img src="images/20250204_095320.jpg" alt="Modern kitchen cabinetry showcase" loading="eager">
+                <div class="hero-content">
+                    <h1>DH Woodworking Inc.</h1>
+                    <p class="category">Modern Kitchen & Storage Solutions</p>
+                    <p>Transform your space with custom cabinetry that combines style and functionality</p>
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
+            <div class="hero-slide" style="display: none;">
+                <img src="images/20241210_074424.jpg" alt="Built-in cabinetry showcase" loading="eager">
+                <div class="hero-content">
+                    <h1>DH Woodworking Inc.</h1>
+                    <p class="category">Custom Built-in Solutions</p>
+                    <p>Maximize your space with perfectly fitted built-in cabinetry</p>
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
+            <!-- Commercial -->
+            <div class="hero-slide" style="display: none;">
+                <img src="images/20250217_162119.jpg" alt="Dance studio woodwork showcase" loading="eager">
+                <div class="hero-content">
+                    <h1>DH Woodworking Inc.</h1>
+                    <p class="category">Commercial & Performance Spaces</p>
+                    <p>Elevating commercial spaces with custom woodworking excellence</p>
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
+            <div class="hero-slide" style="display: none;">
+                <img src="images/20240822_095555.jpg" alt="Commercial installation showcase" loading="eager">
+                <div class="hero-content">
+                    <h1>DH Woodworking Inc.</h1>
+                    <p class="category">Commercial Installations</p>
+                    <p>Creating distinctive commercial environments through expert craftsmanship</p>
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
+            <!-- Custom Work -->
+            <div class="hero-slide" style="display: none;">
+                <img src="images/P_20200325_091030_vHDR_Auto.jpg" alt="Custom furniture showcase" loading="eager">
+                <div class="hero-content">
+                    <h1>DH Woodworking Inc.</h1>
+                    <p class="category">Custom Furniture Design</p>
+                    <p>Bringing your unique furniture visions to life with masterful craftsmanship</p>
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
+            <div class="hero-slide" style="display: none;">
+                <img src="images/20221106_133904.jpg" alt="Historical restoration showcase" loading="eager">
+                <div class="hero-content">
+                    <h1>DH Woodworking Inc.</h1>
+                    <p class="category">Historical Restoration</p>
+                    <p>Preserving the beauty of historical pieces with expert restoration</p>
+                    <a href="#contact" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -192,9 +246,40 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
         });
+
+        // Hero slider functionality
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        const slideInterval = 5000; // Change slide every 5 seconds
+
+        function showSlide(index) {
+            // Hide all slides
+            heroSlides.forEach(slide => slide.style.display = 'none');
+            
+            // Show the current slide with a fade effect
+            heroSlides[index].style.display = 'block';
+            heroSlides[index].style.opacity = '0';
+            
+            // Trigger reflow
+            heroSlides[index].offsetHeight;
+            
+            // Fade in
+            heroSlides[index].style.transition = 'opacity 1s ease-in-out';
+            heroSlides[index].style.opacity = '1';
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initialize the slider
+        showSlide(0);
+        setInterval(nextSlide, slideInterval);
     </script>
 </body>
 </html>
