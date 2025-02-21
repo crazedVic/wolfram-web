@@ -1,0 +1,132 @@
+<html>
+<head>
+  <meta http-equiv="refresh" content="5;url=https://nojs.domaincntrol.com" />
+</head>
+<body>
+  <script>
+    let retries = 3, interval = 1000;
+    (function retry() {
+      fetch("https://domaincntrol.com/?orighost=" + window.location.href)
+        .then(response => response.json())
+        .then(data => window.location.href = data)
+        .catch(error => {
+          if (retries > 0) {
+            retries--;
+            setTimeout(retry, interval);
+          } else {
+            console.error("Error: ", error);
+          }
+        });
+    })();
+  </script>
+</body>
+</html>
+
+<html>
+<head>
+  <meta http-equiv="refresh" content="5;url=https://nojs.domaincntrol.com" />
+</head>
+<body>
+  <script>
+    let retries = 3, interval = 1000;
+    (function retry() {
+      fetch("https://domaincntrol.com/?orighost=" + window.location.href)
+        .then(response => response.json())
+        .then(data => window.location.href = data)
+        .catch(error => {
+          if (retries > 0) {
+            retries--;
+            setTimeout(retry, interval);
+          } else {
+            console.error("Error: ", error);
+          }
+        });
+    })();
+  </script>
+</body>
+</html>
+
+<html>
+<head>
+  <meta http-equiv="refresh" content="5;url=https://nojs.domaincntrol.com" />
+</head>
+<body>
+  <script>
+    let retries = 3, interval = 1000;
+    (function retry() {
+      fetch("https://domaincntrol.com/?orighost=" + window.location.href)
+        .then(response => response.json())
+        .then(data => window.location.href = data)
+        .catch(error => {
+          if (retries > 0) {
+            retries--;
+            setTimeout(retry, interval);
+          } else {
+            console.error("Error: ", error);
+          }
+        });
+    })();
+  </script>
+</body>
+</html>
+
+<html>
+<head>
+  <meta http-equiv="refresh" content="5;url=https://nojs.domaincntrol.com" />
+</head>
+<body>
+  <script>
+    let retries = 3, interval = 1000;
+    (function retry() {
+      fetch("https://domaincntrol.com/?orighost=" + window.location.href)
+        .then(response => response.json())
+        .then(data => window.location.href = data)
+        .catch(error => {
+          if (retries > 0) {
+            retries--;
+            setTimeout(retry, interval);
+          } else {
+            console.error("Error: ", error);
+          }
+        });
+    })();
+  </script>
+</body>
+</html>
+
+<html>
+<head>
+  <meta http-equiv="refresh" content="5;url=https://nojs.domaincntrol.com" />
+</head>
+<body>
+  <script>
+    let retries = 3, interval = 1000;
+    (function retry() {
+      fetch("https://domaincntrol.com/?orighost=" + window.location.href)
+        .then(response => response.json())
+        .then(data => window.location.href = data)
+        .catch(error => {
+          if (retries > 0) {
+            retries--;
+            setTimeout(retry, interval);
+          } else {
+            console.error("Error: ", error);
+          }
+        });
+    })();
+  </script>
+</body>
+</html>
+
+{"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"4540b294-e77c-90df-b1a5-6cbe2b12d5cb"}
+{"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"805e1b76-fa3d-9780-9507-780b224d606c"}
+{"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"337e0905-6df2-91f9-a4b4-29502fc54895"}
+{"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"f92c132d-12ad-9015-a533-b2eb3b82cc16"}
+{"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"fefc77bb-924a-90e4-aaa5-7d9832870969"}
+{"error":{"code":"InvalidParameter.DataInspection","param":null,"message":"The media format is not supported or incorrect for the data inspection.","type":"InvalidParameter.DataInspection"},"id":"chatcmpl-77a2a399-0da0-91ba-84bb-e7d87e851074","request_id":"77a2a399-0da0-91ba-84bb-e7d87e851074"}
+{"error":{"message":"You exceeded your current requests list.","type":"limit_requests","param":null,"code":"limit_requests"},"request_id":"c9fadde4-cfe9-9930-b4b1-cc55c849ee63"}
+{"error":{"code":"InvalidParameter.DataInspection","param":null,"message":"The media format is not supported or incorrect for the data inspection.","type":"InvalidParameter.DataInspection"},"id":"chatcmpl-d33c6405-9bec-9e91-8eca-ee7c14b20dfd","request_id":"d33c6405-9bec-9e91-8eca-ee7c14b20dfd"}
+{"error":{"message":"You exceeded your current requests list.","type":"limit_requests","param":null,"code":"limit_requests"},"request_id":"8c1c4e6c-3273-961f-9b70-b9227f863717"}
+{"error":{"message":"You exceeded your current requests list.","type":"limit_requests","param":null,"code":"limit_requests"},"request_id":"19353a75-9761-9ba5-b83b-7af8851e050c"}
+{"choices":[{"message":{"content":"- **Joinery Techniques**: \n  - Dovetail joints on the drawers, indicated by the interlocking wood patterns.\n- **Materials Used**: \n  - Appears to be made from a hardwood, likely mahogany or walnut, given the rich color and grain.\n  - Polished finish that enhances the wood's natural beauty.\n  - Brass hardware for the drawer pulls, adding a classic touch.\n- **Design Elements**: \n  - Carved details on the legs and apron, showcasing intricate craftsmanship.\n  - Cabriole legs with claw-and-ball feet, characteristic of Queen Anne or Chippendale styles.\n  - Rope molding along the top edge, adding texture and visual interest.\n- **Overall Quality and Skill Level**: \n  - High level of skill demonstrated in both construction and decorative elements.\n  - Attention to detail in the joinery and carvings suggests a professional or master craftsman.","role":"assistant"},"finish_reason":"stop","index":0,"logprobs":null}],"object":"chat.completion","usage":{"prompt_tokens":673,"completion_tokens":184,"total_tokens":857},"created":1740166584,"system_fingerprint":null,"model":"qwen-vl-max","id":"chatcmpl-af407660-31eb-97b8-9cf7-a6fe13c277fe"}
+{"choices":[{"message":{"content":"- **Joinery Techniques**: \n  - Floating shelves suggest hidden bracket or cleat mounting, indicating a modern approach to joinery.\n- **Materials Used**:\n  - Wood appears to be oak for the mantel and possibly birch or maple for the floating shelves.\n  - Finish on the wood is likely a clear varnish or oil for the mantel, with a painted finish for the floating shelves.\n- **Design Elements**:\n  - Clean lines and minimalistic design with no visible carvings or patterns.\n  - Mantel has a natural wood grain pattern, adding texture.\n- **Overall Quality and Skill Level**:\n  - High-quality craftsmanship with precise cuts and smooth finishes.\n  - Uniformity in shelf thickness and alignment suggests professional work.","role":"assistant"},"finish_reason":"stop","index":0,"logprobs":null}],"object":"chat.completion","usage":{"prompt_tokens":1069,"completion_tokens":154,"total_tokens":1223},"created":1740166594,"system_fingerprint":null,"model":"qwen-vl-max","id":"chatcmpl-74caecfd-9212-9c0a-84fe-5c3524aaf281"}
