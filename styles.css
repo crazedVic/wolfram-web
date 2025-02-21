@@ -43,6 +43,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
 
 .logo {
@@ -104,6 +105,39 @@ nav {
 
 .nav-links a:hover {
     color: var(--light-wood);
+}
+
+.language-switcher {
+    position: fixed;
+    top: 1px;
+    right: 5px;
+    display: flex;
+    gap: 0.375rem;
+    z-index: 2000;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.lang-btn.active {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .hero {
@@ -537,6 +571,15 @@ footer {
     .nav-links {
         gap: 1rem;
     }
+
+    .language-switcher {
+        top: 1px;
+        right: 5px;
+    }
+
+    .lang-btn {
+        font-size: 1.1rem;
+    }
 }
 
 /* Additional breakpoint for even smaller screens */
@@ -555,6 +598,14 @@ footer {
 
     .gallery-set h3 {
         font-size: 1.5rem;
+    }
+
+    .language-switcher {
+        right: 5px;
+    }
+
+    .lang-btn {
+        font-size: 1rem;
     }
 }
 
