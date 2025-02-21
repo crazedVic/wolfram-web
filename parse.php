@@ -1,7 +1,7 @@
 <?php
 
 // Define the folder containing the images
-$imageFolder = 'test/';
+$imageFolder = 'images/';
 
 // Read the API key from gemini_key.txt
 $apiKeyFile = 'gemini_key.txt';

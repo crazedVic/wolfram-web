@@ -12,3 +12,6 @@ test/
 .Trashes
 ehthumbs.db
 Thumbs.db 
+results.txt
+api_response.log
+api_errors.log
