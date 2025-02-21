@@ -241,43 +241,6 @@
         <img id="modalImage" src="" alt="">
     </div>
 
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .modal.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
-        }
-
-        .modal.active img {
-            transform: scale(1);
-        }
-    </style>
-
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
@@ -288,50 +251,98 @@
         const heroSlides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
         let previousSlide = heroSlides.length - 1;
+        let isAnimating = false;
         const slideInterval = 5000; // Change slide every 5 seconds
 
         function showSlide(index) {
-            previousSlide = (index - 1 + heroSlides.length) % heroSlides.length;
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            previousSlide = currentSlide;
+            currentSlide = index;
             
             heroSlides.forEach(slide => {
                 slide.classList.remove('active', 'previous');
             });
             
             heroSlides[previousSlide].classList.add('previous');
-            heroSlides[index].classList.add('active');
+            heroSlides[currentSlide].classList.add('active');
+            
+            // Reset animation flag after transition
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
         }
 
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % heroSlides.length;
-            showSlide(currentSlide);
+            const nextIndex = (currentSlide + 1) % heroSlides.length;
+            showSlide(nextIndex);
         }
 
         // Initialize the slider
         showSlide(0);
-        setInterval(nextSlide, slideInterval);
+        const sliderInterval = setInterval(nextSlide, slideInterval);
+
+        // Cleanup interval on page unload
+        window.addEventListener('unload', () => {
+            clearInterval(sliderInterval);
+        });
 
         // Image Modal functionality
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
+        let originalBodyStyle;
+
+        function lockScroll() {
+            originalBodyStyle = window.getComputedStyle(document.body).overflow;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function unlockScroll() {
+            document.body.style.overflow = originalBodyStyle;
+        }
 
         // Add click event to all images except the logo
         document.querySelectorAll('img:not(.logo)').forEach(img => {
-            img.addEventListener('click', function() {
+            img.addEventListener('click', function(e) {
+                e.preventDefault();
                 modalImg.src = this.src;
                 modalImg.alt = this.alt;
                 modal.classList.add('active');
+                lockScroll();
             });
         });
 
         // Close modal when clicking anywhere
         modal.addEventListener('click', function() {
             modal.classList.remove('active');
+            unlockScroll();
         });
 
         // Prevent scrolling when modal is open
         modal.addEventListener('wheel', function(e) {
             if (modal.classList.contains('active')) {
                 e.preventDefault();
+            }
+        });
+
+        // Handle touch events
+        modal.addEventListener('touchmove', function(e) {
+            if (modal.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent double-tap zoom on mobile
+        modal.addEventListener('touchend', function(e) {
+            e.preventDefault();
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                unlockScroll();
             }
         });
     </script>
