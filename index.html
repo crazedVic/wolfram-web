@@ -38,6 +38,7 @@
             <div class="hero-fixed-content">
                 <a href="#contact" class="cta-button">Start Your Project</a>
             </div>
+            <div class="hero-progress-bar"></div>
             <!-- Residential -->
             <div class="hero-slide">
                 <img src="images/20250217_162157.jpg" alt="Modern kitchen with zebrawood pattern" loading="eager">
@@ -386,6 +387,7 @@
         let isAnimating = false;
         let sliderInterval;
         const slideInterval = 12000; // Change slide every 12 seconds
+        const progressBar = document.querySelector('.hero-progress-bar');
 
         function showSlide(index) {
             if (isAnimating) return;
@@ -400,6 +402,11 @@
             
             heroSlides[previousSlide].classList.add('previous');
             heroSlides[currentSlide].classList.add('active');
+
+            // Reset and start progress bar animation
+            progressBar.classList.remove('active');
+            void progressBar.offsetWidth; // Force reflow
+            progressBar.classList.add('active');
             
             // Reset animation flag after transition
             setTimeout(() => {
