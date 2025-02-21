@@ -458,9 +458,34 @@ footer {
         display: flex;
     }
 
+    /* Transform scroll gallery to grid */
+    .scroll-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        overflow: visible;
+        padding: 0;
+        scroll-snap-type: none;
+    }
+
+    .scroll-gallery::-webkit-scrollbar {
+        display: none;
+    }
+
     .scroll-item {
-        width: 250px;
-        height: 250px;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%; /* Makes items square */
+        scroll-snap-align: none;
+    }
+
+    .scroll-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .company-name {
@@ -481,5 +506,24 @@ footer {
 
     .nav-links {
         gap: 1rem;
+    }
+}
+
+/* Additional breakpoint for even smaller screens */
+@media (max-width: 480px) {
+    .scroll-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .gallery-set h3 {
+        font-size: 1.5rem;
     }
 } 
