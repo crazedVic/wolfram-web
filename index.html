@@ -434,8 +434,8 @@
             document.body.style.overflow = originalBodyStyle;
         }
 
-        // Add click event to all images except the logo
-        document.querySelectorAll('img:not(.logo)').forEach(img => {
+        // Add click event to all images except the logo and hero images
+        document.querySelectorAll('img:not(.logo-img):not(.hero-slide img)').forEach(img => {
             img.addEventListener('click', function(e) {
                 e.preventDefault();
                 modalImg.src = this.src;
