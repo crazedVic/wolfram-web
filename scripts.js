@@ -210,7 +210,7 @@ const translations = {
         },
         about: {
             title: "About the Master Craftsman",
-            p1: "Wolfram Seidel, a distinguished Tischlermeister (Master Carpenter) from Bavaria, Germany, brings over three decades of exceptional woodworking expertise to Canada. After completing his rigorous apprenticeship and earning his master craftsman certification in the renowned woodworking region of Oberammergau, Wolfram has dedicated his life to perfecting the art of fine woodworking.",
+            p1: "Wolfram Seidel, a distinguished Tischlermeister (Master Cabinet Maker) from Bochum, Germany, brings over three decades of exceptional woodworking expertise to Canada. After completing his rigorous apprenticeship and earning his master craftsman certification in the renowned woodworking region of Arnsberb, Wolfram has dedicated his life to perfecting the art of fine woodworking.",
             p2: "His masterful approach combines time-honored German woodworking traditions with contemporary design sensibilities. Specializing in custom cabinetry, fine furniture, and architectural woodwork, Wolfram's work is characterized by impeccable attention to detail, traditional joinery techniques, and an unwavering commitment to quality.",
             p3: "Each project undertaken by Wolfram reflects his deep understanding of wood as a living material, carefully selecting premium hardwoods and employing traditional finishing techniques to ensure lasting beauty and durability. His expertise extends from intricate hand carving to precision machine work, allowing him to tackle projects of any scale while maintaining the highest standards of craftsmanship."
         }
@@ -282,7 +282,7 @@ const translations = {
         },
         about: {
             title: "Über den Meister",
-            p1: "Wolfram Seidel, ein angesehener Tischlermeister aus Bayern, Deutschland, bringt über drei Jahrzehnte außergewöhnliche Expertise im Holzhandwerk nach Kanada. Nach Abschluss seiner anspruchsvollen Ausbildung und dem Erwerb seines Meisterbriefs in der renommierten Holzhandwerksregion Oberammergau hat Wolfram sein Leben der Perfektionierung der feinen Holzbearbeitung gewidmet.",
+            p1: "Wolfram Seidel, ein angesehener Tischlermeister aus Bochum, Deutschland, bringt über drei Jahrzehnte außergewöhnliche Expertise im Holzhandwerk nach Kanada. Nach Abschluss seiner anspruchsvollen Ausbildung und dem Erwerb seines Meisterbriefs in der renommierten Holzhandwerksregion Arnsberg hat Wolfram sein Leben der Perfektionierung der feinen Holzbearbeitung gewidmet.",
             p2: "Sein meisterhafter Ansatz verbindet traditionelle deutsche Holzbearbeitungstraditionen mit zeitgenössischem Design. Spezialisiert auf maßgefertigte Schränke, edle Möbel und architektonische Holzarbeiten, zeichnet sich Wolframs Arbeit durch perfekte Liebe zum Detail, traditionelle Verbindungstechniken und kompromisslose Qualität aus.",
             p3: "Jedes von Wolfram durchgeführte Projekt spiegelt sein tiefes Verständnis von Holz als lebendigem Material wider. Er wählt sorgfältig Premium-Harthölzer aus und verwendet traditionelle Veredelungstechniken, um dauerhafte Schönheit und Langlebigkeit zu gewährleisten. Seine Expertise reicht von aufwendiger Handschnitzerei bis hin zu Präzisionsmaschinenarbeit, wodurch er Projekte jeder Größenordnung unter Einhaltung höchster handwerklicher Standards ausführen kann."
         }
