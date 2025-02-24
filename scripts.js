@@ -372,4 +372,7 @@ langButtons.forEach(btn => {
 });
 
 // Set initial active state
-document.querySelector(`[data-lang="en"]`).classList.add('active'); 
+document.querySelector(`[data-lang="en"]`).classList.add('active');
+
+// Initialize translations
+updateContent('en'); 
